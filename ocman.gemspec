@@ -1,6 +1,9 @@
+$:.push File.expand_path("../lib", __FILE__)
+require "ocman/version"
+
 Gem::Specification.new do |s|
   s.name        = 'ocman'
-  s.version     = '0.0.0'
+  s.version     = Ocman::VERSION.dup
   s.date        = '2016-06-10'
   s.summary     = "Ocman - Manages files and shares in owncloud"
   s.description = "Ruby gem for file managment and sharing in owncloud"
