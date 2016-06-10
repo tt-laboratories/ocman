@@ -6,8 +6,8 @@ Ruby gem for file managment and sharing in owncloud
 
 ```
 Ocman.configure do |config|
-	config.base_url = 'https://example.org'
-	config.user_name = ''
-	config.password = ''
+  config.base_url = 'https://example.org'
+  config.user_name = ''
+  config.password = ''
 end
 ```
