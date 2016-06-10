@@ -11,4 +11,5 @@ Gem::Specification.new do |s|
   s.license     = 'MIT'
 
   s.add_runtime_dependency 'net_dav', '~> 0'
+  s.add_development_dependency 'rspec'
 end
