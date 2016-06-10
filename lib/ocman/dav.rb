@@ -4,14 +4,29 @@ module Ocman
   class Dav
     attr_writer :connection
 
-    def initialize
-    end
-
     def mkdir(path)
       connection.mkdir(dav_base_uri + path)
     end
 
+    def ls(path)
+      accu = []
+
+      connection.find(dav_base_uri + path) do |item|
+        accu << item_hash(item)
+      end
+
+      accu
+    end
+
     private
+
+      def item_hash(item)
+        {
+          path: item.uri.path.gsub(dav_base_uri, '/'),
+          type: item.type,
+          size: item.size
+        }
+      end
 
       def dav_base_uri
         '/remote.php/webdav/'
