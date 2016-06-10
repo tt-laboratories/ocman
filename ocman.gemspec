@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
   s.description = "Ruby gem for file managment and sharing in owncloud"
   s.authors     = ["Waldemar Gribele", "Stefan Rohde"]
   s.email       = 'laboratories@toptranslation.com'
-  s.files       = ["lib/ocman.rb"]
+  s.files       = Dir["{lib}/**/*"]
   s.homepage    = 'https://developer.toptranslation.com'
   s.license     = 'MIT'
 end
