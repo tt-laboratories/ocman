@@ -9,4 +9,6 @@ Gem::Specification.new do |s|
   s.files       = Dir["{lib}/**/*"]
   s.homepage    = 'https://developer.toptranslation.com'
   s.license     = 'MIT'
+
+  s.add_runtime_dependency 'net_dav', '~> 0'
 end

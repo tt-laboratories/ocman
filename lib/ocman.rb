@@ -1,5 +1,7 @@
-require 'ocman/version'
 require 'ocman/configuration'
+require 'ocman/dav'
+require 'ocman/folder'
+require 'ocman/version'
 
 module Ocman
   class << self
