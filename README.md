@@ -43,7 +43,6 @@ Optional configuration options
 #### Delete a share for a folder or a file
 
 ```ruby
-# delete a share
 >> Ocman.delete_share('path/to/folder', 'user_name')
 => #<Hashie::Mash data=nil meta=#<Hashie::Mash message=nil status='ok' statuscode='100'>>
 ```
@@ -74,14 +73,14 @@ Optional configuration options
 #### Delete a file or folder
 
 ```ruby
->> Ocman.delete('path/to/file_or_older')
+>> Ocman.delete('path/to/file')
 => nil
 ```
 
 #### Move a file or folder
 
 ```ruby
->> Ocman.move('source_path/of/file_or_older', 'destination_path')
+>> Ocman.move('source_path/of/file', 'destination_path')
 => ""
 ```
 
