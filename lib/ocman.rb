@@ -35,8 +35,12 @@ module Ocman
     Ocman::Folder.create(path)
   end
 
-  ### filder
+  ### files
   def self.put(file_path, path)
     Ocman::Item.create(file_path, path)
+  end
+
+  def self.delete(path)
+    Ocman::Item.delete(path)
   end
 end

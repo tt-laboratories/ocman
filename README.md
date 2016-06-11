@@ -71,6 +71,13 @@ Optional configuration options
 => nil
 ```
 
+#### Delete a file or folder
+
+```ruby
+>> Ocman.delete('path/to/file_or_older')
+=> nil
+```
+
 ## Contact
 Web: [https://www.toptranslation.com](https://www.toptranslation.com)
 
