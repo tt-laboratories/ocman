@@ -23,6 +23,12 @@ Ocman.configure do |config|
 end
 ```
 
+Optional configuration options
+
+```ruby
+  config.dav_base_uri = '/remote.php/webdav/' # Optional - URI of the owncloud installation. Defaults to '/remote.php/webdav/'
+```
+
 ## Usage
 
 ### Sharing
@@ -54,7 +60,13 @@ end
 #### Create folder
 
 ```ruby
->> Ocman.create('path/to/folder')
+>> Ocman.create_folder('path/to/folder')
+```
+
+#### Upload a file
+
+```ruby
+>> Ocman.put('local/file/path', 'remote/path/to/folder')
 ```
 
 ## Contact

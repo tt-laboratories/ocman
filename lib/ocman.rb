@@ -1,5 +1,6 @@
 require 'ocman/configuration'
 require 'ocman/dav'
+require 'ocman/item'
 require 'ocman/folder'
 require 'ocman/version'
 require 'ocman/share'
@@ -10,18 +11,32 @@ module Ocman
   end
 
   def self.configuration
-    @configuration ||= Configuration.new
+    @configuration ||= Ocman::Configuration.new
   end
 
   def self.configure
     yield(configuration)
   end
 
-  def self.share(patch, user)
-    Share.new(patch).share(user)
+  def self.share(path, user)
+    Ocman::Share.new(path).share(user)
   end
 
-  def self.delete_share(patch, user)
-    Share.new(patch).delete_share(user)
+  def self.delete_share(path, user)
+    Ocman::Share.new(path).delete_share(user)
+  end
+
+  ### folder
+  def self.list(path)
+    Ocman::Folder.list(path)
+  end
+
+  def self.create_folder(path)
+    Ocman::Folder.create(path)
+  end
+
+  ### filder
+  def self.put(file_path, path)
+    Ocman::Item.create(file_path, path)
   end
 end
