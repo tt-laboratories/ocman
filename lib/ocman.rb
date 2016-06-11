@@ -36,11 +36,15 @@ module Ocman
   end
 
   ### files
-  def self.put(file_path, path)
+  def self.put(file_path, path='/')
     Ocman::Item.create(file_path, path)
   end
 
   def self.delete(path)
     Ocman::Item.delete(path)
+  end
+
+  def self.move(source_path, destination_path)
+    Ocman::Item.move(source_path, destination_path)
   end
 end

@@ -78,6 +78,13 @@ Optional configuration options
 => nil
 ```
 
+#### Move a file or folder
+
+```ruby
+>> Ocman.move('source_path/of/file_or_older', 'destination_path')
+=> ""
+```
+
 ## Contact
 Web: [https://www.toptranslation.com](https://www.toptranslation.com)
 

@@ -7,5 +7,9 @@ module Ocman
     def self.delete(path)
       Ocman::Dav.new.delete(path)
     end
+
+    def self.move(source_path, destination_path)
+      Ocman::Dav.new.move(source_path, destination_path)
+    end
   end
 end

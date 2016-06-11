@@ -24,6 +24,10 @@ module Ocman
       connection.delete( uri(path) )
     end
 
+    def move(source_path, destination_path)
+      connection.move( uri(source_path), uri(destination_path) )
+    end
+
     def self.base_uri
       Ocman.configuration.dav_base_uri || '/remote.php/webdav/'
     end
