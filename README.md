@@ -30,28 +30,28 @@ end
 #### Share a folder or a file
 
 ```ruby
->> Ocman.share("path/to/folder", "evel.knievel")
-=> #<Hashie::Mash data=nil meta=#<Hashie::Mash message=nil status="ok" statuscode="100">>
+>> Ocman.share('path/to/folder', 'user_name')
+=> #<Hashie::Mash data=nil meta=#<Hashie::Mash message=nil status='ok' statuscode='100'>>
 ```
 
 #### Delete a share for a folder or a file
 
 ```ruby
 # delete a share
->> Ocman.delete_share("path/to/folder", "evel.knievel")
-=> #<Hashie::Mash data=nil meta=#<Hashie::Mash message=nil status="ok" statuscode="100">>
+>> Ocman.delete_share('path/to/folder', 'user_name')
+=> #<Hashie::Mash data=nil meta=#<Hashie::Mash message=nil status='ok' statuscode='100'>>
 ```
 
 ### Filemanagement
 
-#### List directory
+#### List folder
 
 ```ruby
 >> Ocman.list('path/to/folder')
 => #Hashie::Mash path=/example.txt type=file size=123
 ```
 
-#### Create directory
+#### Create folder
 
 ```ruby
 >> Ocman.create('path/to/folder')
