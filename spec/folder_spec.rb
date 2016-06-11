@@ -7,4 +7,11 @@ describe Ocman::Folder do
       Ocman::Folder.create_folder('/foobar')
     end
   end
+
+  describe :list do
+    it 'should call ls on Ocman::Dav' do
+      expect_any_instance_of(Ocman::Dav).to receive(:ls).and_return(true)
+      Ocman::Folder.list('/foobar')
+    end
+  end
 end
