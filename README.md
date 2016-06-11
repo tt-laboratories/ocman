@@ -85,7 +85,7 @@ Optional configuration options
 ```
 
 ## Contact
-Web: [https://www.toptranslation.com](https://www.toptranslation.com)
+Web: [https://www.toptranslation.com](https://www.toptranslation.com), [https://developer.toptranslation.com](https://developer.toptranslation.com)
 
 Github: [https://www.github.com/tt-laboratories](https://www.github.com/tt-laboratories)
 
