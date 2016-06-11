@@ -1,9 +1,7 @@
 # ocman
 Ruby gem for file managment and sharing in owncloud
 
-# Getting Started
-
-## Install
+## Installation
 ### Rails
 
 Add this line to your application's Gemfile:
