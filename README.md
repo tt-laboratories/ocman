@@ -48,7 +48,7 @@ Optional configuration options
 => #<Hashie::Mash data=nil meta=#<Hashie::Mash message=nil status='ok' statuscode='100'>>
 ```
 
-### Filemanagement
+### File Management
 
 #### List folder
 
