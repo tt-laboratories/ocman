@@ -1,6 +1,6 @@
 module Ocman
   class Folder
-    def self.create_folder(path)
+    def self.create(path)
       Ocman::Dav.new.mkdir(path)
     end
 
