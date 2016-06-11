@@ -9,38 +9,37 @@ module Ocman
     end
 
     def ls(path)
-      accu = []
-
       connection.find( uri(path) ) do |item|
-        accu << item_hash(item)
+        yield(item)
       end
-
-      accu
     end
 
     def put(file_path, path)
-      puts uri(path, File.basename(file_path))
       File.open(file_path, 'r') do |stream|
         connection.put( uri(path, File.basename(file_path)) , stream, File.size(file_path))
       end
+    end
+
+    def self.base_uri
+      Ocman.configuration.dav_base_uri || '/remote.php/webdav/'
+    end
+
+    def self.url(path)
+      Ocman.configuration.base_url + (Ocman::Dav.base_uri + path).gsub(/\/+/, '/')
     end
 
     private
 
       def item_hash(item)
         {
-          path: item.uri.path.gsub(dav_base_uri, '/'),
+          path: item.uri.path.gsub(Ocman::Dav.base_uri, '/'),
           type: item.type,
           size: item.size
         }
       end
 
       def uri(path, filename=nil)
-        [dav_base_uri, path, filename].compact.join('/').gsub(/\/+/, '/')
-      end
-
-      def dav_base_uri
-        Ocman.configuration.dav_base_uri || '/remote.php/webdav/'
+        [Ocman::Dav.base_uri, path, filename].compact.join('/').gsub(/\/+/, '/')
       end
 
       def connection

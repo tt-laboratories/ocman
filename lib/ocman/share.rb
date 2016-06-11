@@ -1,3 +1,5 @@
+require 'hashie'
+
 module Ocman
   class Share
     def initialize(path)

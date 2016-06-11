@@ -54,19 +54,21 @@ Optional configuration options
 
 ```ruby
 >> Ocman.list('path/to/folder')
-=> #Hashie::Mash path=/example.txt type=file size=123
+=> #Hashie::Mash path='/example.txt' type='file' size=123
 ```
 
 #### Create folder
 
 ```ruby
 >> Ocman.create_folder('path/to/folder')
+=> ""
 ```
 
 #### Upload a file
 
 ```ruby
 >> Ocman.put('local/file/path', 'remote/path/to/folder')
+=> nil
 ```
 
 ## Contact
