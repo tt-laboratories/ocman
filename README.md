@@ -54,7 +54,7 @@ Optional configuration options
 
 ```ruby
 >> Ocman.list('path/to/folder')
-=> #Hashie::Mash path='/example.txt' type='file' size=123
+=> [#<Hashie::Mash path="Documents" size=0 type="directory">]
 ```
 
 #### Create folder
