@@ -18,6 +18,7 @@ module Ocman
     yield(configuration)
   end
 
+  ### share
   def self.share(path, user)
     Ocman::Share.new(path).share(user)
   end
