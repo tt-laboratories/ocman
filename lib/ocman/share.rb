@@ -68,7 +68,6 @@ module Ocman
           method:   http_method,
           user:     Ocman.configuration.user_name,
           password: Ocman.configuration.password,
-          verify_ssl: false, # ToDo use ssl
         }
       end
   end
