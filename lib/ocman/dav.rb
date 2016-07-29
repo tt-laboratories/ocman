@@ -14,9 +14,10 @@ module Ocman
       end
     end
 
-    def put(file_path, path)
+    def put(file_path, path, options={})
+      filename = options[:filename] || File.basename(file_path)
       File.open(file_path, 'r') do |stream|
-        connection.put( uri(path, File.basename(file_path)) , stream, File.size(file_path))
+        connection.put( uri(path, filename) , stream, File.size(file_path))
       end
     end
 

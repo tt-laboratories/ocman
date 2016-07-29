@@ -66,9 +66,13 @@ Optional configuration options
 #### Upload a file
 
 ```ruby
->> Ocman.put('local/file/path', 'remote/path/to/folder')
+>> Ocman.put('local/file/path', 'remote/path/to/folder', <options>)
 => nil
 ```
+
+Available options:
+
++ filename: filename of the file stored in owncloud (defaults to basename of the file)
 
 #### Delete a file or folder
 
