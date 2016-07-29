@@ -1,7 +1,7 @@
 module Ocman
   class Item
-    def self.create(file, path)
-      Ocman::Dav.new.put(file, path)
+    def self.create(file, path, options={})
+      Ocman::Dav.new.put(file, path, options)
     end
 
     def self.delete(path)

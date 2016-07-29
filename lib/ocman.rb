@@ -37,8 +37,8 @@ module Ocman
   end
 
   ### files
-  def self.put(file_path, path='/')
-    Ocman::Item.create(file_path, path)
+  def self.put(file_path, path, options={})
+    Ocman::Item.create(file_path, path, options)
   end
 
   def self.delete(path)
