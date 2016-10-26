@@ -52,9 +52,12 @@ Optional configuration options
 #### List folder
 
 ```ruby
->> Ocman.list('path/to/folder')
+>> Ocman.list('path/to/folder', options={})
 => [#<Hashie::Mash path="Documents" size=0 type="directory">, #<Hashie::Mash path="Test.zip" size=127 type="file">]
 ```
+
+##### Available options:
+* recursive - If true the folder contents will be listed recursively
 
 #### Create folder
 
@@ -93,6 +96,6 @@ Web: [https://www.toptranslation.com](https://www.toptranslation.com), [https://
 
 Github: [https://www.github.com/tt-laboratories](https://www.github.com/tt-laboratories)
 
-Twitter: [@tt_developers](http://www.twitter.com/tt_developers), [@toptranslation](http://www.twitter.com/toptranslation) 
+Twitter: [@tt_developers](http://www.twitter.com/tt_developers), [@toptranslation](http://www.twitter.com/toptranslation)
 
 Mail: tech@toptranslation.com

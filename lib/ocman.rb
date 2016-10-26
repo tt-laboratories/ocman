@@ -28,8 +28,8 @@ module Ocman
   end
 
   ### folder
-  def self.list(path)
-    Ocman::Folder.list(path)
+  def self.list(path, options={})
+    Ocman::Folder.list(path, options)
   end
 
   def self.create_folder(path)

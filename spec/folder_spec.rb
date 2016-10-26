@@ -9,9 +9,16 @@ describe Ocman::Folder do
   end
 
   describe :list do
+    let(:path) { '/foobar' }
+    let(:options) { { recursive: true }}
     it 'should call ls on Ocman::Dav' do
-      expect_any_instance_of(Ocman::Dav).to receive(:ls).and_return(true)
-      Ocman::Folder.list('/foobar')
+      expect_any_instance_of(Ocman::Dav).to receive(:ls).with(path, {}).and_return(true)
+      Ocman::Folder.list(path)
+    end
+
+    it 'should give options to Ocman::Dav' do
+      expect_any_instance_of(Ocman::Dav).to receive(:ls).with(path, options).and_return(true)
+      Ocman::Folder.list(path, options)
     end
   end
 end

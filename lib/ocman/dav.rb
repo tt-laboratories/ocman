@@ -8,8 +8,8 @@ module Ocman
       connection.mkdir( uri(path) )
     end
 
-    def ls(path)
-      connection.find( uri(path) ) do |item|
+    def ls(path, options={})
+      connection.find( uri(path), options ) do |item|
         yield(item)
       end
     end
