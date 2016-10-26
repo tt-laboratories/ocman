@@ -1,3 +1,5 @@
+require 'json'
+require 'restclient'
 require 'hashie'
 
 module Ocman
@@ -54,20 +56,16 @@ module Ocman
 
     private
       def parse_result(response)
-        response = Hash.from_xml(response)['ocs']
-        result = Hashie::Mash.new
-        result.meta = response['meta']
-        result.data = (response['data']['element'] rescue nil)
-        result
+        Hashie::Mash.new( JSON.parse(response)['ocs'] )
       end
 
       def connection_params(http_method, id=nil)
-        url = Ocman.configuration.base_url + "/ocs/v1.php/apps/files_sharing/api/v1/shares" + "#{'/' + id if id}"
+        url = Ocman.configuration.base_url + "/ocs/v1.php/apps/files_sharing/api/v1/shares" + "#{'/' + id.to_s if id}?format=json"
         {
           url:      url,
           method:   http_method,
           user:     Ocman.configuration.user_name,
-          password: Ocman.configuration.password,
+          password: Ocman.configuration.password
         }
       end
   end
