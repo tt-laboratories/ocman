@@ -68,6 +68,9 @@ module Ocman
           method:   http_method,
           user:     Ocman.configuration.user_name,
           password: Ocman.configuration.password,
+          headers:  {
+            'OCS-APIRequest': true,
+          }
         }
       end
   end
