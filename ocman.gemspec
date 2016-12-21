@@ -4,7 +4,7 @@ require "ocman/version"
 Gem::Specification.new do |s|
   s.name        = 'ocman'
   s.version     = Ocman::VERSION.dup
-  s.date        = '2016-09-12'
+  s.date        = '2016-12-21'
   s.summary     = "Ocman - Manages files and shares in owncloud"
   s.description = "Ruby gem for file managment and sharing in owncloud"
   s.authors     = ["Waldemar Gribele", "Stefan Rohde"]
