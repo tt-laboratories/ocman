@@ -24,8 +24,7 @@ module Ocman
 
     def delete_share(user)
       share = find_share(user)
-      request_parameter = connection_params('delete', share.id)
-      request = RestClient::Request.new( request_parameter )
+      request = RestClient::Request.new( connection_params('delete', id: share.id) )
       parse_result( request.execute )
     end
 
@@ -42,15 +41,7 @@ module Ocman
     end
 
     def share_info
-      request_parameter = {
-        headers:  {
-          params: {
-            path: @path
-          },
-        },
-      }.merge connection_params('get')
-
-      request = RestClient::Request.new( request_parameter )
+      request = RestClient::Request.new( connection_params('get', path: @path) )
       parse_result( request.execute )
     end
 
@@ -59,15 +50,21 @@ module Ocman
         Hashie::Mash.new( JSON.parse(response)['ocs'] )
       end
 
-      def connection_params(http_method, id=nil)
-        url = Ocman.configuration.base_url + "/ocs/v1.php/apps/files_sharing/api/v1/shares" + "#{'/' + id.to_s if id}?format=json"
+      def connection_params(http_method, attributes={})
+        id = attributes[:id]
+        url = Ocman.configuration.base_url + "/ocs/v1.php/apps/files_sharing/api/v1/shares" + "#{'/' + id.to_s if id}"
+
         {
           url:      url,
           method:   http_method,
           user:     Ocman.configuration.user_name,
           password: Ocman.configuration.password,
           headers:  {
-            'OCS-APIRequest': true,
+            'OCS-APIRequest' => true,
+            params: {
+              path: attributes[:path],
+              format: 'json'
+            }.reject {| key, value | value.nil? }
           }
         }
       end
