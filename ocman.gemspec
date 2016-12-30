@@ -16,7 +16,7 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency 'net_dav', '~> 0.5.1'
   s.add_runtime_dependency 'hashie', '~> 3.4'
   s.add_runtime_dependency 'rest-client', '~> 2.0'
-  s.add_runtime_dependency 'json', '~>2.0'
+  s.add_runtime_dependency 'multi_json', '~> 1.0'
   s.add_development_dependency 'rspec', '~> 3.5'
 
 end

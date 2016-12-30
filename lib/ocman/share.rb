@@ -1,4 +1,4 @@
-require 'json'
+require 'multi_json'
 require 'restclient'
 require 'hashie'
 
@@ -47,7 +47,7 @@ module Ocman
 
     private
       def parse_result(response)
-        Hashie::Mash.new( JSON.parse(response)['ocs'] )
+        Hashie::Mash.new( MultiJson.load(response)['ocs'] )
       end
 
       def connection_params(http_method, attributes={})
