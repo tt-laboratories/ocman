@@ -1,15 +1,16 @@
 require 'net/dav'
+require 'cgi'
 
 module Ocman
   class Dav
     attr_writer :connection
 
     def mkdir(path)
-      connection.mkdir( uri(path) )
+      connection.mkdir(uri(path) )
     end
 
     def ls(path, options={})
-      connection.find( uri(path), options ) do |item|
+      connection.find(uri(path), options ) do |item|
         yield(item)
       end
     end
@@ -17,7 +18,7 @@ module Ocman
     def put(file_path, path, options={})
       filename = options[:filename] || File.basename(file_path)
       File.open(file_path, 'r') do |stream|
-        connection.put( uri(path, filename) , stream, File.size(file_path))
+        connection.put(uri(path, filename), stream, File.size(file_path))
       end
     end
 
@@ -26,7 +27,7 @@ module Ocman
     end
 
     def move(source_path, destination_path)
-      connection.move( uri(source_path), uri(destination_path) )
+      connection.move(uri(source_path), uri(destination_path) )
     end
 
     def self.base_uri
@@ -48,6 +49,7 @@ module Ocman
       end
 
       def uri(path, filename=nil)
+        filename = CGI.escape(filename) if filename
         [Ocman::Dav.base_uri, path, filename].compact.join('/').gsub(/\/+/, '/')
       end
 
