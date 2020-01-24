@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'ocman/configuration'
 require 'ocman/dav'
 require 'ocman/item'
@@ -28,7 +30,7 @@ module Ocman
   end
 
   ### folder
-  def self.list(path, options={})
+  def self.list(path, options = {})
     Ocman::Folder.list(path, options)
   end
 
@@ -37,7 +39,7 @@ module Ocman
   end
 
   ### files
-  def self.put(file_path, path, options={})
+  def self.put(file_path, path, options = {})
     Ocman::Item.create(file_path, path, options)
   end
 

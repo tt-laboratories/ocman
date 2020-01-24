@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'ocman'
 
 RSpec.configure do |config|
@@ -5,11 +7,11 @@ RSpec.configure do |config|
   # order dependency and want to debug it, you can fix the order by providing
   # the seed, which is printed after each run.
   #     --seed 1234
-  config.order = "random"
+  config.order = 'random'
 end
 
 Ocman.configure do |config|
-  base_url = 'https://example.org'
-  user_name = 'ocman'
-  password = 'ocman'
+  config.base_url = 'https://example.org'
+  config.user_name = 'ocman'
+  config.password = 'ocman'
 end

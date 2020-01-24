@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'net/dav'
 require 'cgi'
 
@@ -6,16 +8,16 @@ module Ocman
     attr_writer :connection
 
     def mkdir(path)
-      connection.mkdir(uri(path) )
+      connection.mkdir(uri(path))
     end
 
-    def ls(path, options={})
-      connection.find(uri(path), options ) do |item|
+    def ls(path, options = {})
+      connection.find(uri(path), options) do |item|
         yield(item)
       end
     end
 
-    def put(file_path, path, options={})
+    def put(file_path, path, options = {})
       filename = options[:filename] || File.basename(file_path)
       File.open(file_path, 'r') do |stream|
         connection.put(uri(path, filename), stream, File.size(file_path))
@@ -23,11 +25,11 @@ module Ocman
     end
 
     def delete(path)
-      connection.delete( uri(path) )
+      connection.delete(uri(path))
     end
 
     def move(source_path, destination_path)
-      connection.move(uri(source_path), uri(destination_path) )
+      connection.move(uri(source_path), uri(destination_path))
     end
 
     def self.base_uri
@@ -35,7 +37,7 @@ module Ocman
     end
 
     def self.url(path)
-      Ocman.configuration.base_url + (Ocman::Dav.base_uri + path).gsub(/\/+/, '/')
+      Ocman.configuration.base_url + (Ocman::Dav.base_uri + path).gsub(%r{/+}, '/')
     end
 
     private
@@ -48,9 +50,9 @@ module Ocman
         }
       end
 
-      def uri(path, filename=nil)
+      def uri(path, filename = nil)
         filename = CGI.escape(filename) if filename
-        [Ocman::Dav.base_uri, path, filename].compact.join('/').gsub(/\/+/, '/')
+        [Ocman::Dav.base_uri, path, filename].compact.join('/').gsub(%r{/+}, '/')
       end
 
       def connection
