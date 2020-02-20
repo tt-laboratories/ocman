@@ -20,6 +20,7 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency 'net_dav', '~> 0.5.1'
   s.add_runtime_dependency 'rest-client', '~> 2.0'
 
+  s.add_development_dependency 'rake'
   s.add_development_dependency 'rspec', '~> 3.5'
   s.add_development_dependency 'rubocop', '~> 0.79.0'
   s.add_development_dependency 'rubocop-rspec', '~> 1.37.1'
