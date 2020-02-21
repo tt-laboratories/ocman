@@ -10,13 +10,13 @@ module Ocman
       @path = path
     end
 
-    def share(user)
+    def share(user, permission = Permission.all)
       request_parameter = {
         payload: {
           path: @path,
           shareWith: user,
           shareType: '0',
-          permissions: '31'
+          permissions: permission.to_i
         }
       }.merge connection_params('post')
 

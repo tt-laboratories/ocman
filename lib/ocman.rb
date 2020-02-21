@@ -3,6 +3,7 @@
 require 'ocman/configuration'
 require 'ocman/dav'
 require 'ocman/item'
+require 'ocman/permission'
 require 'ocman/folder'
 require 'ocman/version'
 require 'ocman/share'
@@ -21,8 +22,8 @@ module Ocman
   end
 
   ### share
-  def self.share(path, user)
-    Ocman::Share.new(path).share(user)
+  def self.share(path, user, permission = Permission.all)
+    Ocman::Share.new(path).share(user, permission)
   end
 
   def self.delete_share(path, user)

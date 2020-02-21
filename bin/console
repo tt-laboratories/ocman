@@ -1,0 +1,14 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require 'bundler/setup'
+require 'pry'
+require 'ocman'
+
+Ocman.configure do |config|
+  config.base_url = ENV['BASE_URL']
+  config.user_name = ENV['USERNAME']
+  config.password = ENV['PASSWORD']
+end
+
+Pry.start(self)
