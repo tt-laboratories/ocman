@@ -26,18 +26,16 @@ module Ocman
 
     def delete_share(user)
       share = find_share(user)
+      return if share.nil?
+
       request = RestClient::Request.new(connection_params('delete', id: share.id))
       parse_result(request.execute)
     end
 
     def find_share(user)
-      result = nil
-      shares = share_info.data
-      shares = [shares] unless shares.is_a?(Array)
-      shares.each do |share|
-        result = share if share.share_with == user
+      Array(share_info.data).find do |share|
+        share.share_with == user
       end
-      result
     end
 
     def share_info
