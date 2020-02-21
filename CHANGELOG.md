@@ -1,3 +1,22 @@
+<a name="1.3.0"></a>
+### 1.3.0 (2020-02-21)
+
+#### Features
+
+* make share permissions configurable
+
+#### Bug Fixes
+
+* avoid NoMethodError on delete_share when no share was found
+
+#### Maintenance
+
+* use github actions
+
+#### Style
+
+* fix rubocop offenses
+
 <a name="1.2.3"></a>
 ### 1.2.3 (2020-01-24)
 
