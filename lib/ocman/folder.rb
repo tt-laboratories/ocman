@@ -2,6 +2,7 @@
 
 require 'hashie'
 require 'cgi'
+require 'erb'
 
 module Ocman
   class Folder
@@ -27,7 +28,7 @@ module Ocman
       private
 
         def escape_path(path)
-          path.split('/').map { |segment| CGI.escape(segment) }.join('/')
+          path.split('/').map { |segment| ERB::Util.url_encode(segment) }.join('/')
         end
     end
   end
