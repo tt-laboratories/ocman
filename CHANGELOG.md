@@ -1,3 +1,10 @@
+<a name="1.3.1"></a>
+### 1.3.1 (2020-02-25)
+
+#### Bug Fixes
+
+* use ERB::Util.url_encode instead of CGI.escape to emulate URI.escape's behaviour
+
 <a name="1.3.0"></a>
 ### 1.3.0 (2020-02-21)
 
