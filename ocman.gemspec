@@ -14,6 +14,7 @@ Gem::Specification.new do |s|
   s.files       = Dir['{lib}/**/*']
   s.homepage    = 'https://developer.toptranslation.com'
   s.license     = 'MIT'
+  s.required_ruby_version = '>= 2.4'
 
   s.add_runtime_dependency 'hashie', '~> 3.4'
   s.add_runtime_dependency 'multi_json', '~> 1.0'
@@ -24,6 +25,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'pry-nav'
   s.add_development_dependency 'rake'
   s.add_development_dependency 'rspec', '~> 3.5'
-  s.add_development_dependency 'rubocop', '~> 0.79.0'
-  s.add_development_dependency 'rubocop-rspec', '~> 1.37.1'
+  s.add_development_dependency 'rubocop', '~> 1.6.1'
+  s.add_development_dependency 'rubocop-rake', '~> 0.5'
+  s.add_development_dependency 'rubocop-rspec', '~> 2.1.0'
 end

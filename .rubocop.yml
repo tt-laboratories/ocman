@@ -2,4 +2,4 @@ inherit_from:
   - https://raw.githubusercontent.com/tt-laboratories/dotfiles/master/.rubocop.yml
 
 AllCops:
-  TargetRubyVersion: 2.3
+  TargetRubyVersion: 2.4

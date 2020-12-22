@@ -11,10 +11,8 @@ module Ocman
       connection.mkdir(uri(path))
     end
 
-    def ls(path, options = {})
-      connection.find(uri(path), options) do |item|
-        yield(item)
-      end
+    def ls(path, options = {}, &block)
+      connection.find(uri(path), options, &block)
     end
 
     def put(file_path, path, options = {})

@@ -65,12 +65,12 @@ module Ocman
           params: {
             path: attributes[:path],
             format: 'json'
-          }.reject { |_key, value| value.nil? }
+          }.compact
         }
       end
 
       def share_url(id = nil)
-        Ocman.configuration.base_url + '/ocs/v1.php/apps/files_sharing/api/v1/shares' + ('/' + id.to_s if id).to_s
+        "#{Ocman.configuration.base_url}/ocs/v1.php/apps/files_sharing/api/v1/shares#{"/#{id}" if id}"
       end
   end
 end

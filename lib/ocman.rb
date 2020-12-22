@@ -35,8 +35,12 @@ module Ocman
     Ocman::Folder.list(path, options)
   end
 
-  def self.create_folder(path)
-    Ocman::Folder.create(path)
+  def self.create_folder(path, recursive: false)
+    if recursive
+      Ocman::Folder.create_recursive(path)
+    else
+      Ocman::Folder.create(path)
+    end
   end
 
   ### files
