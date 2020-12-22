@@ -1,3 +1,10 @@
+<a name="1.4.0"></a>
+### 1.4.0 (2020-12-22)
+
+#### Features
+
+* add recursive flag to create_folder (#7)	 ([28d76b1](/../commit/28d76b1))
+
 <a name="1.3.1"></a>
 ### 1.3.1 (2020-02-25)
 
