@@ -1,3 +1,14 @@
+<a name="1.4.1"></a>
+### 1.4.1 (2021-01-28)
+
+#### Bug Fixes
+
+* use ERB::Util.url_encode instead of CGI.escape	 ([3590197](/../commit/3590197))
+
+#### Maintain
+
+* add .DS_Store to gitignore	 ([9bc59f4](/../commit/9bc59f4))
+
 <a name="1.4.0"></a>
 ### 1.4.0 (2020-12-22)
 
